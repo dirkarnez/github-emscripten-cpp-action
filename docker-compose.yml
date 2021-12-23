@@ -3,7 +3,8 @@ services:
   emscripten:
     container_name: emscripten-compiler
     image: rnix/emsdk
-    working_dir: ./emscripten-cpp-source
+    volumes:
+      - ./emscripten-cpp-source:/src
     command: em++ -std=c++1z --bind main.cpp -o ../public/index.html
   web:
     container_name: webapp-frontend
