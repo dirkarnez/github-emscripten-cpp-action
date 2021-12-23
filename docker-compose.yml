@@ -5,7 +5,7 @@ services:
     image: rnix/emsdk
     volumes:
       - ./emscripten-cpp-source:/src
-    command: em++ -std=c++1z --bind main.cpp -o ../public/index.html
+    command: em++ -std=c++1z --bind main.cpp -o index.html && ls
   web:
     container_name: webapp-frontend
     build: .
