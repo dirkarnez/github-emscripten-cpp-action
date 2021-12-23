@@ -12,6 +12,6 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./emscripten-cpp-source:/go/src/github.com/dirkarnez/golang-hello-world
+      - ./emscripten-cpp-source:/go/src/github.com/dirkarnez/golang-hello-world/emscripten-cpp-source
     depends_on:
       - emscripten
