@@ -36,7 +36,8 @@ func main() {
 			"data": "hello world!",
 		})
 	})
-	
+
+	app.HandleDir("/", iris.Dir("./public"))
 	
 	err := app.Run(
 		// Start the web server at localhost:5000
