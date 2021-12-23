@@ -3,7 +3,7 @@ FROM golang:1.17.0-alpine
 COPY . /go/src/github.com/dirkarnez/golang-hello-world
 WORKDIR /go/src/github.com/dirkarnez/golang-hello-world
 
-RUN go build -o app && ls
+RUN go build -o app && cd public && ls && cd ..
 
 ENTRYPOINT [ "./app" ]
 
