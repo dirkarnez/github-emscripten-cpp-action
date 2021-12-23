@@ -8,4 +8,4 @@ jobs:
       - name: Build the stack
         run: docker-compose up -d
       - name: Test
-        run: cd jseval && docker build -t jseval -f jseval.dockerfile . && docker run --rm --network container:webapp-frontend jseval --url "http://localhost:5000/module.html" --sleep 5 --evaluate 'JSON.stringify([document.location.href, Module.MY_CONST])' --headless --output
+        run: cd jseval && docker build -t jseval -f jseval.dockerfile . && docker run --rm --network container:webapp-frontend jseval --url "http://localhost:5000/module.html" --sleep 5 --evaluate "var Module = { onRuntimeInitialized:function() { console.log(Module.MY_CONST); } };" --headless --output
